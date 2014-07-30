@@ -8,3 +8,7 @@ xcompmgr &
 killall syndaemon
 syndaemon -K -i .9 -d
 exec awesome
+
+
+#remap the capslock to emulate mod4(hyper)
+setxkbmap -option caps:hyper
