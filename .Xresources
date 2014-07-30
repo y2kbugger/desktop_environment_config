@@ -86,3 +86,8 @@ XTerm*faceSize: 8
 !XTerm.color13:  #d53d7a
 !Xft.antialias:  1
 !Xft.dpi:        96
+
+
+!make sure to tell programs that you are going to be allowing 16 colors
+XTerm*termName:		 xterm-16color
+
