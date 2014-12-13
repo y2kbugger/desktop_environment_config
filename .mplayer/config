@@ -1,3 +1,4 @@
 # Write your default config options here!
 
-
+# don't let xscreensaver take over when a movie is playing
+heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
