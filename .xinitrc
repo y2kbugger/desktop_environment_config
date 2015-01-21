@@ -18,6 +18,9 @@ syndaemon -K -i .5 -d
 #some programs that I like to have running when my computer starts up
 xscreensaver -no-splash &
 
+#start server for vim editing of chrome
+cvim_server.py &
+
 #start awesome window manager, and logoff the shell when it terminates
 exec awesome
 
