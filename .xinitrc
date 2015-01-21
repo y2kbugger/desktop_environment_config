@@ -21,6 +21,9 @@ xscreensaver -no-splash &
 #start server for vim editing of chrome
 cvim_server.py &
 
+#disable touchpad
+touchpad
+
 #start awesome window manager, and logoff the shell when it terminates
 exec awesome
 
