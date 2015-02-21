@@ -3,10 +3,10 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 #enable transparency
-#xcompmgr &
+xcompmgr &
 
 #webcam in background
-mplayer -rootwin -fps 15 tv:// -x 1280 -y 720  -vf crop=640:375 -noconsolecontrols &
+#mplayer -rootwin -fps 15 tv:// -x 1280 -y 720  -vf crop=640:375 -noconsolecontrols &
 
 #remap the capslock to emulate mod4(hyper)
 setxkbmap -option caps:hyper
