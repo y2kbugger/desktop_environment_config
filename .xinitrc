@@ -18,12 +18,11 @@ syndaemon -K -i .5 -d
 #some programs that I like to have running when my computer starts up
 xscreensaver -no-splash &
 
-#start server for vim editing of chrome
-cvim_server.py &
-
 #disable touchpad
-touchpad
+#synclient TouchpadOff=1
+
+#don't let my keyboard be slowwwwwww
+xset r rate 180 15
 
 #start awesome window manager, and logoff the shell when it terminates
 exec awesome
-
