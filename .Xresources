@@ -76,7 +76,7 @@ XTerm*metaSendsEscape: true
 XTerm*locale: true
 
 !increase scrolling distance
-Xterm*saveLines: 8192
+XTerm*saveLines: 16384 
 
 XTerm*faceName: Anonymous Pro
 XTerm*faceSize: 8 
