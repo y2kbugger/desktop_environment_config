@@ -25,4 +25,7 @@ xscreensaver -no-splash &
 xset r rate 180 15
 
 #start awesome window manager, and logoff the shell when it terminates
-exec awesome
+#exec awesome
+
+#use i3 instead
+exec i3
