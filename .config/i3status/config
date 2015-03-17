@@ -11,14 +11,14 @@ general {
         interval = 5
 }
 
-order += "ipv6"
-order += "disk /"
-order += "run_watch DHCP"
-order += "run_watch VPN"
-order += "wireless wlan0"
-order += "ethernet eth0"
+#order += "ipv6"
+#order += "disk /"
+#order += "run_watch DHCP"
+#order += "run_watch VPN"
+#order += "wireless wlan0"
+#order += "ethernet eth0"
 order += "battery 0"
-order += "load"
+#order += "load"
 order += "tztime local"
 
 wireless wlan0 {
@@ -33,7 +33,7 @@ ethernet eth0 {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining"
+        format = "%remaining %status %percentage"
 }
 
 run_watch DHCP {
@@ -45,7 +45,7 @@ run_watch VPN {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%a %d%b%Y %H:%M:%S"
 }
 
 load {
