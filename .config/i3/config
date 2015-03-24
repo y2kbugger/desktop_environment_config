@@ -27,7 +27,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec --no-startup-id xterm
 
 # kill focused window
 bindsym $mod+x kill
@@ -101,8 +101,11 @@ bindsym $mod+Shift+0 move container to workspace 10
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 
-for_window [class=".*"] border 1pixel
-for_window [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] move container to workspace 8:sms
+new_window pixel 0
+for_window [class="XTerm"] border normal 0
+for_window [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal 0
+
+assign [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -137,29 +140,75 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#base03 darkest, background
+#base02 background highlights
+#base01 comments/secondary content
+#base10 body text/ primary content
+#base11 optional emphisised content
+#base13 lightest
+
+set $base03    #002b36
+set $base02    #073642
+set $base01    #586e75
+set $base00    #657b83
+set $base10    #839496
+set $base11    #93a1a1
+set $base12    #eee8d5
+set $base13    #fdf6e3
+set $yellow    #b58900
+set $orange    #cb4b16
+set $red       #dc322f
+set $magenta   #d33682
+set $violet    #6c71c4
+set $blue      #268bd2
+set $cyan      #2aa198
+set $green     #859900
 bar {
         status_command i3status
+        wheel_up_cmd nop
+        wheel_down_cmd nop
+        #strip_workspace_numbers yes
+        position top
+        
+        colors {
+                background $base03
+                separator  $base01
+                statusline $base10
+                # class             border   backgr.  text
+                urgent_workspace    $magenta $base02  $magenta 
+                inactive_workspace  $base01  $base02  $base01
+                active_workspace    $base11  $base02  $base11
+                focused_workspace   $base11  $base03  $base11
+        }
 }
+# class                 border   backgr.  text     indicator
+client.focused          $base11  #00596f  $base13  $blue
+client.focused_inactive $base10  $base03  $base10  $blue
+client.unfocused        $base10  $base03  $base10  $blue
+client.urgent           $base10  $magenta $base10  $blue
+client.placeholder      $base10  $cyan    $base10  $blue
 
 #autostart
 exec "nm-applet"
 exec "blueman-applet"
 exec "Spideroak"
+#start server for vim editing of chrome
 exec "~/dev/chromium-vim/cvim_server.py"
+exec "compton"
 
 #lock with xscreensaver
-bindsym $mod+Ctrl+l exec "xscreensaver-command -lock"
+bindsym $mod+Ctrl+l exec --no-startup-id "xscreensaver-command -lock"
 
 #take a screenshot
-bindsym Print exec "sleep .4; scrot -s ~/pics/screenshots/Screenshot_%d%b%Y-%T.png"
+bindsym Print exec --no-startup-id "sleep .4; scrot -s ~/pics/screenshots/Screenshot_%d%b%Y-%T.png"
 
+#jump to urgent
+bindsym $mod+u [urgent=latest] focus
 
 #volume controls
-bindsym F9 exec ponymix --max-volume=192 increase 6; exec killall -USR1 i3status
-bindsym F8 exec ponymix --max-volume=192 decrease 6; exec killall -USR1 i3status 
-bindsym F7 exec ponymix toggle; exec killall -USR1 i3status 
+bindsym F9 exec --no-startup-id ponymix --max-volume=192 increase 6; exec killall -USR1 i3status
+bindsym F8 exec --no-startup-id ponymix --max-volume=192 decrease 6; exec killall -USR1 i3status 
+bindsym F7 exec --no-startup-id ponymix toggle; exec killall -USR1 i3status 
 bindsym $mod+F7 exec pavucontrol
 
 # The middle button and a modifer over any part of the window kills the window
