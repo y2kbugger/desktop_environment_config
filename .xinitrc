@@ -2,8 +2,8 @@
 #you must merge you custom Xrsources every boot
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-#enable transparency
-xcompmgr &
+#enable transparency and dimming
+compton -b
 
 #webcam in background
 #mplayer -rootwin -fps 15 tv:// -x 1280 -y 720  -vf crop=640:375 -noconsolecontrols &
