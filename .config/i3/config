@@ -116,9 +116,9 @@ mode "workspace" {
     bindsym Shift+semicolon; move container to workspace 10; workspace 10; mode "default"
     
     #allow to goto last workspace
-    bindsym $mod+Tab workspace back_and_forth; mode "default"
+    bindsym $mod+Tab workspace back_and_forth, mode "default"
     #abort the mode the same way you got in
-    bindsym $mod+semicolon mode "workspace"
+    bindsym $mod+semicolon mode "default"
 }
 bindsym $mod+semicolon mode "workspace"
 
