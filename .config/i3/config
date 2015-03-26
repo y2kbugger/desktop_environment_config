@@ -23,8 +23,6 @@ font pango:DejaVu Sans Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# resize window (you can also use the mouse for that)
-
 #base03 darkest, background
 #base02 background highlights
 #base01 comments/secondary content
@@ -78,6 +76,8 @@ exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
 exec --no-startup-id "Spideroak"
 
+# resize window (you can also use the mouse for that)
+
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
@@ -90,30 +90,32 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+mode "workspace" {
+    # switch to workspace
+    bindsym a workspace 1; mode "default"  
+    bindsym s workspace 2; mode "default"
+    bindsym d workspace 3; mode "default"
+    bindsym f workspace 4; mode "default"
+    bindsym g workspace 5; mode "default"
+    bindsym h workspace 6; mode "default"
+    bindsym j workspace 7; mode "default"
+    bindsym k workspace 8; mode "default"
+    bindsym l workspace 9; mode "default"
+    bindsym semicolon workspace 10; mode "default"
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
-
+    # move focused container to workspace
+    bindsym Shift+a move container to workspace 1; mode "default"
+    bindsym Shift+s move container to workspace 2; mode "default"
+    bindsym Shift+d move container to workspace 3; mode "default"
+    bindsym Shift+f move container to workspace 4; mode "default"
+    bindsym Shift+g move container to workspace 5; mode "default"
+    bindsym Shift+h move container to workspace 6; mode "default"
+    bindsym Shift+j move container to workspace 7; mode "default"
+    bindsym Shift+k move container to workspace 8; mode "default"
+    bindsym Shift+l move container to workspace 9; mode "default"
+    bindsym Shift+semicolon; move container to workspace 10; mode "default"
+}
+bindsym $mod+semicolon mode "workspace"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -168,7 +170,6 @@ bindsym Mod1+k focus parent
 bindsym Mod1+j focus child
 
 #allow to goto last workspace
-workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 
 # Use Mouse+$mod to drag floating windows to their wanted position
