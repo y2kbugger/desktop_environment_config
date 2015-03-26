@@ -104,16 +104,21 @@ mode "workspace" {
     bindsym semicolon workspace 10; mode "default"
 
     # move focused container to workspace
-    bindsym Shift+a move container to workspace 1; mode "default"
-    bindsym Shift+s move container to workspace 2; mode "default"
-    bindsym Shift+d move container to workspace 3; mode "default"
-    bindsym Shift+f move container to workspace 4; mode "default"
-    bindsym Shift+g move container to workspace 5; mode "default"
-    bindsym Shift+h move container to workspace 6; mode "default"
-    bindsym Shift+j move container to workspace 7; mode "default"
-    bindsym Shift+k move container to workspace 8; mode "default"
-    bindsym Shift+l move container to workspace 9; mode "default"
-    bindsym Shift+semicolon; move container to workspace 10; mode "default"
+    bindsym Shift+a move container to workspace 1; workspace 1; mode "default"
+    bindsym Shift+s move container to workspace 2; workspace 2; mode "default"
+    bindsym Shift+d move container to workspace 3; workspace 3; mode "default"
+    bindsym Shift+f move container to workspace 4; workspace 4; mode "default"
+    bindsym Shift+g move container to workspace 5; workspace 5; mode "default"
+    bindsym Shift+h move container to workspace 6; workspace 6; mode "default"
+    bindsym Shift+j move container to workspace 7; workspace 7; mode "default"
+    bindsym Shift+k move container to workspace 8; workspace 8; mode "default"
+    bindsym Shift+l move container to workspace 9; workspace 9; mode "default"
+    bindsym Shift+semicolon; move container to workspace 10; workspace 10; mode "default"
+    
+    #allow to goto last workspace
+    bindsym $mod+Tab workspace back_and_forth; mode "default"
+    #abort the mode the same way you got in
+    bindsym $mod+semicolon mode "workspace"
 }
 bindsym $mod+semicolon mode "workspace"
 
