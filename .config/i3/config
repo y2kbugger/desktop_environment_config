@@ -206,6 +206,7 @@ bindsym --whole-window $mod+button2 kill
 new_window pixel 0
 for_window [class="XTerm"] border normal 0
 for_window [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal 0
+for_window [instance="editwithvim"] border pixel 0, floating enable, move absolute position 650 px 375 px, resize grow width 160 px, resize grow height 90 px
 
 assign [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] 10
 
