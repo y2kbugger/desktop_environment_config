@@ -8,7 +8,11 @@
 
 general {
         colors = true
-        interval = 5
+        output_format = "i3bar"
+        interval = 1
+        color_good = "#859900"
+        color_bad = "#dc322f"
+        color_degraded = "#d33682"
 }
 
 #order += "ipv6"
@@ -20,7 +24,15 @@ general {
 order += "battery 0"
 #order += "load"
 order += "tztime local"
+order += "volume master"
 
+volume master {
+        format = "%volume♪"
+        format_muted = "%volume⊘"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
 wireless wlan0 {
         format_up = "W: (%quality at %essid) %ip"
         format_down = "W: down"
@@ -33,7 +45,10 @@ ethernet eth0 {
 }
 
 battery 0 {
-        format = "%remaining %status %percentage"
+        format = "%status %percentage"
+        #status_chr = "s"
+        #status_bat = " "
+        #status_full = "☻"
 }
 
 run_watch DHCP {
