@@ -74,7 +74,7 @@ client.placeholder      $base10  $cyan    $base10  $blue
 #autostart
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
-exec --no-startup-id "Spideroak"
+exec --no-startup-id "SpiderOak"
 
 # resize window (you can also use the mouse for that)
 
