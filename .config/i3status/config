@@ -46,9 +46,9 @@ ethernet eth0 {
 
 battery 0 {
         format = "%status %percentage"
-        #status_chr = "s"
-        #status_bat = " "
-        #status_full = "☻"
+        status_chr = "s"
+        status_bat = " "
+        status_full = "☻"
 }
 
 run_watch DHCP {
