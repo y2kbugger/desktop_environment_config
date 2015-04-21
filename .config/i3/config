@@ -154,10 +154,11 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal/vertical  orientation
-bindsym Mod1+Shift+h split h
-bindsym Mod1+Shift+j split v
-bindsym Mod1+Shift+k split v
-bindsym Mod1+Shift+l split h
+bindsym Mod1+Shift+h split h; append_layout  ~/.config/i3/vertical.json; move right
+bindsym Mod1+Shift+j split v; append_layout  ~/.config/i3/vertical.json
+bindsym Mod1+Shift+k split v; append_layout  ~/.config/i3/vertical.json; move down
+bindsym Mod1+Shift+l split h; append_layout  ~/.config/i3/vertical.json
+
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym Mod1+p layout stacking
@@ -165,7 +166,7 @@ bindsym Mod1+semicolon layout tabbed
 bindsym Mod1+l layout toggle split
 
 # toggle fullscreen mode for the focused container
-bindsym Mod1+f fullscreen toggle
+bindsym Mod1+F11 fullscreen toggle
 
 # toggle tiling / floating
 bindsym Mod1+Shift+space floating toggle
@@ -179,8 +180,8 @@ bindsym Mod1+j focus child
 
 #allow to goto last workspace
 bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+Ctrl+l workspace next
-bindsym $mod+Ctrl+h workspace prev
+bindsym $mod+o workspace next
+bindsym $mod+m workspace prev
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
