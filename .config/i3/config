@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $m Mod4
+set $a $a
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -88,9 +89,9 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $m+r mode "resize"
 
-mode "workspace" {
+#mode "workspace" {
     # switch to workspace
     bindsym a workspace 1; mode "default"  
     bindsym s workspace 2; mode "default"
@@ -116,95 +117,95 @@ mode "workspace" {
     bindsym Shift+semicolon; move container to workspace 10; workspace 10; mode "default"
     
     #allow to goto last workspace
-    bindsym $mod+Tab workspace back_and_forth, mode "default"
+#    bindsym $m+Tab workspace back_and_forth, mode "default"
     #abort the mode the same way you got in
-    bindsym $mod+semicolon mode "default"
+#    bindsym $m+semicolon mode "default"
     # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+semicolon mode "workspace"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
+#bindsym $m+semicolon mode "workspace"
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $m+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $m+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $m+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id dmenu_recent_aliases
+bindsym $m+p exec --no-startup-id dmenu_recent_aliases
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xterm
+bindsym $m+Return exec --no-startup-id xterm
 
 # kill focused window
-bindsym $mod+x kill
+bindsym $m+x kill
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $m+h focus left
+bindsym $m+j focus down
+bindsym $m+k focus up
+bindsym $m+l focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $m+Shift+h move left
+bindsym $m+Shift+j move down
+bindsym $m+Shift+k move up
+bindsym $m+Shift+l move right
 
 # split in horizontal/vertical  orientation
-bindsym Mod1+Shift+h split h; append_layout  ~/.config/i3/vertical.json; move right
-bindsym Mod1+Shift+j split v; append_layout  ~/.config/i3/vertical.json
-bindsym Mod1+Shift+k split v; append_layout  ~/.config/i3/vertical.json; move down
-bindsym Mod1+Shift+l split h; append_layout  ~/.config/i3/vertical.json
+bindsym $a+Shift+h split h; append_layout  ~/.config/i3/vertical.json; move right
+bindsym $a+Shift+j split v; append_layout  ~/.config/i3/vertical.json
+bindsym $a+Shift+k split v; append_layout  ~/.config/i3/vertical.json; move down
+bindsym $a+Shift+l split h; append_layout  ~/.config/i3/vertical.json
 
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+p layout stacking
-bindsym Mod1+semicolon layout tabbed
-bindsym Mod1+l layout toggle split
+bindsym $a+p layout stacking
+bindsym $a+semicolon layout tabbed
+bindsym $a+l layout toggle split
 
 # toggle fullscreen mode for the focused container
-bindsym Mod1+F11 fullscreen toggle
+bindsym $a+F11 fullscreen toggle
 
 # toggle tiling / floating
-bindsym Mod1+Shift+space floating toggle
+bindsym $a+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym Mod1+space focus mode_toggle
+bindsym $a+space focus mode_toggle
 
 # focus the parent/child  container
-bindsym Mod1+k focus parent
-bindsym Mod1+j focus child
+bindsym $a+k focus parent
+bindsym $a+j focus child
 
 #allow to goto last workspace
-bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+o workspace next
-bindsym $mod+m workspace prev
+bindsym $m+Tab workspace back_and_forth
+bindsym $m+o workspace next
+bindsym $m+m workspace prev
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$m to drag floating windows to their wanted position
+floating_modifier $m
 
 #lock with xscreensaver
-bindsym $mod+z exec --no-startup-id "xscreensaver-command -lock"
+bindsym $m+z exec --no-startup-id "xscreensaver-command -lock"
 
 #take a screenshot
 bindsym Print exec --no-startup-id "sleep .4; scrot -s ~/pics/screenshots/Screenshot_%d%b%Y-%T.png"
 
 #jump to urgent
-bindsym $mod+u [urgent=latest] focus
+bindsym $m+u [urgent=latest] focus
 
 #volume controls
 bindsym F9 exec --no-startup-id ponymix --max-volume=192 increase 6; exec killall -USR1 i3status
 bindsym F8 exec --no-startup-id ponymix --max-volume=192 decrease 6; exec killall -USR1 i3status 
 bindsym F7 exec --no-startup-id ponymix toggle; exec killall -USR1 i3status 
-bindsym $mod+F9 exec pavucontrol
-bindsym $mod+F8 exec pavucontrol
-bindsym $mod+F7 exec pavucontrol
+bindsym $m+F9 exec pavucontrol
+bindsym $m+F8 exec pavucontrol
+bindsym $m+F7 exec pavucontrol
 
 # The middle button and a modifer over any part of the window kills the window
-bindsym --whole-window $mod+button2 kill
+bindsym --whole-window $m+button2 kill
 
 
 # borders for new windows
