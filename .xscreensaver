@@ -1,9 +1,9 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.29 for y2k on Mon Aug  4 02:52:59 2014.
-# http://www.jwz.org/xscreensaver/
+# Written by xscreensaver-demo 5.36 for y2k on Sun Feb  5 22:54:43 2017.
+# https://www.jwz.org/xscreensaver/
 
 timeout:	0:11:00
-cycle:		0:01:00
+cycle:		0:02:00
 lock:		True
 lockTimeout:	0:04:00
 passwdTimeout:	0:00:30
@@ -24,14 +24,14 @@ fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	False
+dpmsEnabled:	True
 dpmsQuickOff:	False
-dpmsStandby:	2:00:00
-dpmsSuspend:	2:00:00
-dpmsOff:	4:00:00
-grabDesktopImages:  True
+dpmsStandby:	0:44:00
+dpmsSuspend:	0:44:00
+dpmsOff:	1:00:00
+grabDesktopImages:  False
 grabVideoFrames:    False
-chooseRandomImages: True
+chooseRandomImages: False
 imageDirectory:	
 
 mode:		random
@@ -94,7 +94,7 @@ programs:								      \
 -				xjack -root				    \n\
 -				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
--				bsod -root				    \n\
+				bsod -root				    \n\
 - GL: 				bubble3d -root				    \n\
 - GL: 				cage -root				    \n\
 -				crystal -root				    \n\
@@ -254,6 +254,22 @@ programs:								      \
   GL: 				unknownpleasures -root			    \n\
   GL: 				projectiveplane -root			    \n\
 -				tessellimage -root			    \n\
+				binaryring -root			    \n\
+  GL: 				cityflow -root				    \n\
+  GL: 				geodesicgears -root			    \n\
+  GL: 				winduprobot -root			    \n\
+  GL: 				romanboy -root				    \n\
+  GL: 				splitflap -root				    \n\
+  GL: 				cubestack -root				    \n\
+  GL: 				cubetwist -root				    \n\
+  GL: 				discoball -root				    \n\
+  GL: 				dymaxionmap -root			    \n\
+  GL: 				energystream -root			    \n\
+  GL: 				hexstrut -root				    \n\
+  GL: 				hydrostat -root				    \n\
+  GL: 				raverhoop -root				    \n\
+  GL: 				splodesic -root				    \n\
+  GL: 				unicrud -root				    \n\
 
 
 pointerPollTime:    0:00:05
@@ -264,4 +280,5 @@ GetViewPortIsFullOfLies:False
 procInterrupts:	True
 xinputExtensionDev: False
 overlayStderr:	True
+authWarningSlack:   20
 
