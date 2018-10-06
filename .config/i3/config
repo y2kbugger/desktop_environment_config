@@ -10,7 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $m Mod4
-set $a $a
+
+set $a Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -72,6 +73,9 @@ client.unfocused        $base10  $base03  $base10  $blue
 client.urgent           $base10  $magenta $base10  $blue
 client.placeholder      $base10  $cyan    $base10  $blue
 
+#disable urgent delay
+force_display_urgency_hint 0 ms
+
 #autostart
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
@@ -84,54 +88,54 @@ mode "resize" {
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 bindsym $m+r mode "resize"
 
-#mode "workspace" {
-    # switch to workspace
-    bindsym a workspace 1; mode "default"  
-    bindsym s workspace 2; mode "default"
-    bindsym d workspace 3; mode "default"
-    bindsym f workspace 4; mode "default"
-    bindsym g workspace 5; mode "default"
-    bindsym h workspace 6; mode "default"
-    bindsym j workspace 7; mode "default"
-    bindsym k workspace 8; mode "default"
-    bindsym l workspace 9; mode "default"
-    bindsym semicolon workspace 10; mode "default"
-
-    # move focused container to workspace
-    bindsym Shift+a move container to workspace 1; workspace 1; mode "default"
-    bindsym Shift+s move container to workspace 2; workspace 2; mode "default"
-    bindsym Shift+d move container to workspace 3; workspace 3; mode "default"
-    bindsym Shift+f move container to workspace 4; workspace 4; mode "default"
-    bindsym Shift+g move container to workspace 5; workspace 5; mode "default"
-    bindsym Shift+h move container to workspace 6; workspace 6; mode "default"
-    bindsym Shift+j move container to workspace 7; workspace 7; mode "default"
-    bindsym Shift+k move container to workspace 8; workspace 8; mode "default"
-    bindsym Shift+l move container to workspace 9; workspace 9; mode "default"
-    bindsym Shift+semicolon; move container to workspace 10; workspace 10; mode "default"
-    
-    #allow to goto last workspace
-#    bindsym $m+Tab workspace back_and_forth, mode "default"
-    #abort the mode the same way you got in
-#    bindsym $m+semicolon mode "default"
-    # back to normal: Enter or Escape
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
+#mode "cvim:INSERT" {
+#        bindsym Escape mode "default"
 #}
-#bindsym $m+semicolon mode "workspace"
+#bindsym $m+i mode "cvim:INSERT"
+
+# switch to workspace
+bindsym $a+1 workspace 1
+bindsym $a+2 workspace 2
+bindsym $a+3 workspace 3
+bindsym $a+4 workspace 4
+bindsym $a+5 workspace 5
+bindsym $a+6 workspace 6
+bindsym $a+7 workspace 7
+bindsym $a+8 workspace 8
+bindsym $a+9 workspace 9
+bindsym $a+10 workspace 10
+
+# move focused container to workspace
+bindsym $a+Shift+1 move container to workspace 1; workspace 1
+bindsym $a+Shift+2 move container to workspace 2; workspace 2
+bindsym $a+Shift+3 move container to workspace 3; workspace 3
+bindsym $a+Shift+4 move container to workspace 4; workspace 4
+bindsym $a+Shift+5 move container to workspace 5; workspace 5
+bindsym $a+Shift+6 move container to workspace 6; workspace 6
+bindsym $a+Shift+7 move container to workspace 7; workspace 7
+bindsym $a+Shift+8 move container to workspace 8; workspace 8
+bindsym $a+Shift+9 move container to workspace 9; workspace 9
+bindsym $a+Shift+0 move container to workspace 10; workspace 10
 
 # reload the configuration file
-bindsym $m+Shift+c reload
+#allow to goto last workspace
+bindsym $a+Tab workspace back_and_forth
+bindsym $a+k workspace next
+bindsym $a+j workspace prev
+bindsym $a+l move container to workspace next; workspace next
+bindsym $a+h move container to workspace prev; workspace prev
+
+#bindsym $m+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $m+Shift+r restart
+#bindsym $m+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $m+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $m+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # start dmenu (a program launcher)
 bindsym $m+p exec --no-startup-id dmenu_recent_aliases
@@ -155,34 +159,31 @@ bindsym $m+Shift+k move up
 bindsym $m+Shift+l move right
 
 # split in horizontal/vertical  orientation
-bindsym $a+Shift+h split h; append_layout  ~/.config/i3/vertical.json; move right
-bindsym $a+Shift+j split v; append_layout  ~/.config/i3/vertical.json
-bindsym $a+Shift+k split v; append_layout  ~/.config/i3/vertical.json; move down
-bindsym $a+Shift+l split h; append_layout  ~/.config/i3/vertical.json
-
+#bindsym $m+Ctrl+h split h; append_layout  ~/.config/i3/vertical.json; move right
+#bindsym $m+Ctrl+j split v; append_layout  ~/.config/i3/vertical.json
+#bindsym $m+Ctrl+k split v; append_layout  ~/.config/i3/vertical.json; move down
+#bindsym $m+Ctrl+l split h; append_layout  ~/.config/i3/vertical.json
+bindsym $m+Ctrl+h split h
+bindsym $m+Ctrl+j split v
+bindsym $m+Ctrl+semicolon layout toggle split
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $a+p layout stacking
-bindsym $a+semicolon layout tabbed
-bindsym $a+l layout toggle split
+bindsym $m+Ctrl+k layout stacking
+bindsym $m+Ctrl+l layout tabbed
 
 # toggle fullscreen mode for the focused container
-bindsym $a+F11 fullscreen toggle
+bindsym $m+F11 fullscreen toggle
+bindsym $m+Ctrl+F11 fullscreen toggle
 
 # toggle tiling / floating
-bindsym $a+Shift+space floating toggle
+bindsym $m+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $a+space focus mode_toggle
+bindsym $m+space focus mode_toggle
 
 # focus the parent/child  container
-bindsym $a+k focus parent
-bindsym $a+j focus child
-
-#allow to goto last workspace
-bindsym $m+Tab workspace back_and_forth
-bindsym $m+o workspace next
-bindsym $m+m workspace prev
+bindsym $m+Ctrl+o focus parent
+bindsym $m+Ctrl+m focus child
 
 # Use Mouse+$m to drag floating windows to their wanted position
 floating_modifier $m
@@ -191,7 +192,7 @@ floating_modifier $m
 bindsym $m+z exec --no-startup-id "xscreensaver-command -lock"
 
 #take a screenshot
-bindsym Print exec --no-startup-id "sleep .4; scrot -s ~/pics/screenshots/Screenshot_%d%b%Y-%T.png"
+bindsym Print exec --no-startup-id "scrot_dmv"
 
 #jump to urgent
 bindsym $m+u [urgent=latest] focus
@@ -214,6 +215,8 @@ new_window pixel 0
 for_window [class="XTerm"] border normal 0
 for_window [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal 0
 for_window [instance="editwithvim"] border pixel 0, floating enable, move absolute position 650 px 375 px, resize grow width 160 px, resize grow height 90 px
+for_window [class="xtermfloat"] border pixel 0, floating enable, move absolute position 650 px 375 px, resize grow width 160 px, resize grow height 90 px
+for_window [class="feh"] border pixel 2, floating enable, move absolute position 150 px 105 px
 
 assign [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] 10
 
