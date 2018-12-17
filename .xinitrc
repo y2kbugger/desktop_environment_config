@@ -2,6 +2,9 @@
 # you must merge you custom Xrsources every boot
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+#automatically set up multi-display configs
+autorandr
+
 # enable transparency and dimming
 compton -b
 
