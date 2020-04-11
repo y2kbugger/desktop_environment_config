@@ -6,7 +6,7 @@
 autorandr
 
 # enable transparency and dimming
-compton -b
+picom -b
 
 # start osd notification
 dunst&
