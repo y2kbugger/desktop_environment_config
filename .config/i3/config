@@ -138,7 +138,7 @@ bindsym $a+h move container to workspace prev; workspace prev
 #bindsym $m+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # start dmenu (a program launcher)
-bindsym $m+p exec --no-startup-id dmenu_recent_aliases
+bindsym $m+p exec --no-startup-id dmenu-recent-aliases
 
 # start a terminal
 bindsym $m+Return exec --no-startup-id xterm
