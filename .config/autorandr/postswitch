@@ -1,0 +1,10 @@
+#!/bin/bash
+
+notify-send -i display "Autorandr" "$AUTORANDR_CURRENT_PROFILE"
+systemctl start pci-rescan.service
+
+sleep 10
+
+setxkbmap -v -option caps:hyper
+
+
