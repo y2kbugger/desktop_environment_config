@@ -1,6 +1,6 @@
 
 # you must merge you custom Xrsources every boot
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+xrdb -merge /home/y2k/.Xresources
 
 #automatically set up multi-display configs
 autorandr --change
