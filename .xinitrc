@@ -31,7 +31,7 @@ syndaemon -K -i .5 -d
 #synclient TouchpadOff=1
 
 # don't let my keyboard be slowwwwwww
-#xset r rate 180 15
+xset r rate 280 20
 
 
 
