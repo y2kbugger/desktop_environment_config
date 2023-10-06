@@ -76,16 +76,16 @@ XTerm*metaSendsEscape: true
 XTerm*locale: true
 
 !increase scrolling distance
-XTerm*saveLines: 16384 
+XTerm*saveLines: 16384
 
 XTerm*faceName: Anonymous Pro
-XTerm*faceSize: 8 
+XTerm*faceSize: 9
 !XTerm*renderFont:       true
 !XTerm*scrollBar:        false
 !XTerm*visualBell:       true
 !XTerm.color13:  #d53d7a
-!Xft.antialias:  1
-!Xft.dpi:        96
+Xft.antialias:  1
+Xft.dpi:        96
 
 XTerm*allowBoldFonts: false
 !make sure to tell programs that you are going to be allowing 16 colors
@@ -93,3 +93,10 @@ XTerm*termName:		 XTerm-16color
 !XTerm.geometry: 200x700
 !XTerm.vt100.geometry: 80x32
 
+xscreensaver.Dialog.headingFont:        xft:Anonymous Pro
+xscreensaver.Dialog.bodyFont:           xft:Anonymous Pro
+xscreensaver.Dialog.labelFont:          xft:dejavu sans mono:size=9
+xscreensaver.Dialog.unameFont:          xft:Cousine
+xscreensaver.Dialog.buttonFont:         xft:Cousine
+xscreensaver.Dialog.dateFont:           xft:Cousine
+xscreensaver.passwd.passwdFont:         xft:Cousine

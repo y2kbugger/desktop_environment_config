@@ -49,3 +49,7 @@ fi
 
 #i3 window manager and close shell after it terminates
 exec i3
+
+
+
+
