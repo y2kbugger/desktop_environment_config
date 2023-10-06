@@ -3,13 +3,22 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 #automatically set up multi-display configs
-autorandr
+autorandr --change
 
 # enable transparency and dimming
 picom -b
 
-# start osd notification
+# start os notification
 dunst&
+
+# Continuous backup
+SpiderOakONE&
+
+# add a background image
+fehbg&
+
+nm-applet&
+blueman-applet&
 
 # remap the capslock to emulate mod4(hyper)
 setxkbmap -option caps:hyper
@@ -18,20 +27,13 @@ setxkbmap -option caps:hyper
 killall syndaemon
 syndaemon -K -i .5 -d
 
-# enable my screenlocker
-xscreensaver -no-splash &
-
 # disable touchpad
 #synclient TouchpadOff=1
 
 # don't let my keyboard be slowwwwwww
 #xset r rate 180 15
 
-# add a background image
-feh --bg-scale ~/pics/2011-11-04_02-28-02_144_dark.jpg
 
-# webcam as background
-#mplayer -rootwin -fps 15 tv:// -x 1280 -y 720  -vf crop=640:375 -noconsolecontrols &
 
 # start server for vim editing of chrome
 #~/dev/chromium-vim/cvim_server.py &

@@ -54,13 +54,13 @@ bar {
         wheel_down_cmd nop
         #strip_workspace_numbers yes
         position top
-        
+
         colors {
                 background $base03
                 separator  $base01
                 statusline $base10
                 # class             border   backgr.  text
-                urgent_workspace    $magenta $base02  $magenta 
+                urgent_workspace    $magenta $base02  $magenta
                 inactive_workspace  $base01  $base02  $base01
                 active_workspace    $base11  $base02  $base11
                 focused_workspace   $base11  $base03  $base11
@@ -76,10 +76,6 @@ client.placeholder      $base10  $cyan    $base10  $blue
 #disable urgent delay
 force_display_urgency_hint 0 ms
 
-#autostart
-exec --no-startup-id "nm-applet"
-exec --no-startup-id "blueman-applet"
-exec --no-startup-id "SpiderOak"
 
 # switch to workspace
 bindsym $a+1 workspace 1
@@ -175,8 +171,8 @@ bindsym $m+u [urgent=latest] focus
 
 #volume controls
 bindsym F9 exec --no-startup-id ponymix --max-volume=192 increase 6; exec killall -USR1 i3status
-bindsym F8 exec --no-startup-id ponymix --max-volume=192 decrease 6; exec killall -USR1 i3status 
-bindsym F7 exec --no-startup-id ponymix toggle; exec killall -USR1 i3status 
+bindsym F8 exec --no-startup-id ponymix --max-volume=192 decrease 6; exec killall -USR1 i3status
+bindsym F7 exec --no-startup-id ponymix toggle; exec killall -USR1 i3status
 bindsym $m+F9 exec pavucontrol
 bindsym $m+F8 exec pavucontrol
 bindsym $m+F7 exec pavucontrol
@@ -193,7 +189,7 @@ for_window [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal 0
 for_window [instance="editwithvim"] border pixel 0, floating enable, move absolute position 650 px 375 px, resize grow width 160 px, resize grow height 90 px
 for_window [class="xtermfloat"] border pixel 0, floating enable, move absolute position 650 px 375 px, resize grow width 160 px, resize grow height 90 px
 for_window [class="feh"] border pixel 2, floating enable, move absolute position 150 px 105 px
-for_window [class="Renode"] floating enable, resize set width 280 px, resize set height 330 px, move position center, move right 400 px
+for_window [class="Renode"] floating enable, move down 70 px, resize set width 280 px, resize set height 330 px
 
 assign [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] 10
 
