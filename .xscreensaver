@@ -23,7 +23,7 @@ fadeSeconds:	0:00:01
 fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
-font:		*-medium-r-*-140-*-m-*
+font:		*-*-*-*-*-m-*
 dpmsEnabled:	True
 dpmsQuickOff:	False
 dpmsStandby:	0:44:00
