@@ -19,6 +19,7 @@ fehbg&
 
 nm-applet&
 blueman-applet&
+udiskie --tray --notify  --automount &
 
 # remap the capslock to emulate mod4(hyper)
 setxkbmap -option caps:hyper
